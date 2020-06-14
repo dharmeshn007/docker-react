@@ -1,0 +1,7 @@
+sudo: required
+service:
+    - docker
+before-install:
+    - docker build -t dharmesh007/travis -f Dockerfile.dev .
+script:
+    - docker run dharmesh007/travis npm run test -- --coverage
